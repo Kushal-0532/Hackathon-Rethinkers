@@ -8,8 +8,8 @@ from langchain.llms import OpenAI
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 
-openai.api_key = "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"
-os.environ.get("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")
+openai.api_key = "API goes here"
+os.environ.get("API goes here")
 loan_history_prompt = PromptTemplate(
     input_variables=["loan_data"],
     template="""
@@ -40,7 +40,7 @@ Based on the information provided, respond according to this pointer regarding t
 
 """,
 )
-llm = OpenAI(temperature=0.7, openai_api_key="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")
+llm = OpenAI(temperature=0.7, openai_api_key="API goes here")
 chain = LLMChain(llm=llm, prompt=loan_history_prompt)
 chain1 = LLMChain(llm=llm, prompt=credit_score_prompt)
 
